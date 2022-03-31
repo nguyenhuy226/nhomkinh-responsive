@@ -653,6 +653,6 @@
     @include mid(true);
     display: none;
     &.active {
-        display: block;
+        display: flex;
     }
 }
