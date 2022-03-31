@@ -1,0 +1,88 @@
+// css footer
+footer {
+    .footer__main {
+        height: 350px;
+        position: relative;
+        overflow: hidden;
+        &-img {
+            @include midimg()
+        }
+        .container {
+            @include mid();
+            z-index: 1 ;
+            margin: auto;
+            .footer__content {
+                display: grid;
+                grid-template-columns: 420px 1fr 1fr 295px;
+                gap:60px;
+                &-contact {
+                    h3 {
+                        @include text(24px ,'Exo',40px ,$text-white-cl,uppercase);
+                        letter-spacing: -1px;
+                    }
+                    p {
+                        @include text(15px ,'Rr', 25px ,$text-white-cl ,normal);
+                        i {
+                            width: 18px;
+                            padding-right: 10px;
+                        }
+                    }
+                }
+                &-support {
+                    .footer__content-title {
+                        @include text(15px ,'Rb' ,60px ,$text-white-cl,uppercase)
+                    }
+                    p {
+                        @include text(15px ,'Rr', 25px ,$text-white-cl ,normal);
+                    }
+                    img {
+                        margin-top: 20px;
+                    }
+                }
+                &-info {
+                    .footer__content-title {
+                        @include text(15px ,'Rb' ,60px ,$text-white-cl,uppercase)
+                    }
+                    p {
+                        @include text(15px ,'Rr', 25px ,$text-white-cl ,normal);
+                    }
+                }
+                &-fb {
+                    .footer__content-title {
+                        @include text(15px ,'Rb' ,60px ,$text-white-cl,uppercase)
+                    }
+                }
+            }
+        }
+    }
+    .footer__bottom {
+        background-color: #004c92;
+        .container {
+            padding-top: 14px;
+            padding-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .footer__bottom-left {
+                @include text(14px ,'Rr',28px ,$text-white-cl,normal);
+                span {
+                    font-family: 'Rd';
+                }
+            }
+            .footer__bottom-right {
+                @include text(14px ,'Rr',28px ,$text-white-cl,normal);
+                span {
+                    font-family: 'Rd';
+                }
+                .footer__bottom-line {
+                    font-family: 'Rr';
+                    height: 10px;
+                    width: 2px;
+                    display: inline-block;
+                    margin: 0 10px;
+                    background-color: $text-white-cl;
+                }
+            }
+        }
+    }
+}

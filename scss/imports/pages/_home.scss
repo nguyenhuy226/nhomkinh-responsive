@@ -1,0 +1,658 @@
+// CSS HOMEPAGE
+.mainwrapper {
+    .slider {
+        .slider__item-wrap {
+            .slider__item {
+                height: 470px;
+                position: relative;  
+                overflow: hidden;                                                                                                               
+                .slider__item-img {
+                    @include midimg();
+                }
+                .slider__item-text {
+                    max-width: 600px;
+                    text-align: center;
+                    position: absolute;
+                    top: 20%;
+                    left: 25%;
+                    z-index: 1;
+                    h3 {
+                        @include text(48px, 'Scb',60px ,#004c81, uppercase)
+                    }
+                    p {
+                        @include text(22px, 'Scb',27px ,#004c81, normal);
+                        margin-bottom: 15px
+                    }
+                    .btn {
+                        a {
+                            @include text(16px, 'Exo',36px ,$white-cl, uppercase);
+                            text-decoration: none;
+                        }
+                        @include mid(true);
+                        background-color: #0072bc;
+                        width: 194px;
+                        height: 42px;
+                        border-radius: 20px;
+                        position: absolute;
+                        left: 50%;
+                        @include transform(translateX(-50%));
+                    }
+                }
+                .slider__btn {
+                    position: absolute;
+                    top: 50%;
+                    cursor: pointer;
+                    @include transform(translateY(-50%));
+                    z-index: 1;
+                    &.next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .intro {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 75px 15px;
+            .intro__btn {
+                width: 110px;
+                height: 125px;
+                border: 3px solid #ebebeb;
+                @include mid(true);
+                @include text(30px ,'Exo' ,36px,$text-black-cl,normal);
+                text-align: center;
+            }
+            .intro__img {
+                width: 500px;
+                height: 380px;
+                position: relative;
+                overflow: hidden;
+                img {
+                    @include midimg()
+                }
+            }
+            .intro__text {
+                max-width: 525px;
+                h3 {
+                    @include text(45px ,'Exo' ,36px,#cd000e ,uppercase);
+                }
+                &-title {
+                    @include text(17px ,'Rb' ,24px,#383838 ,normal);
+                    margin:  15px  0 25px 0;
+                }
+                &-des {
+                    @include text(15px ,'Rr' ,24px,#383838 ,normal);
+                }
+                &-btn {
+                    margin-top: 22px;
+                    cursor: pointer;
+                    width: 142px;
+                    height: 42px;
+                    border: 3px solid #ebebeb;
+                    @include mid(true);
+                    @include text(14px ,'Rb' ,18px,$text-black-cl, uppercase);
+                    i {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .products {
+        background-color: #ebebeb;
+        .container {
+            .product {
+                position: relative;
+                display: flex;
+                padding: 60px 0 75px 0;
+                &__menu {
+                    width: 264px;
+                    &-title {
+                        @include text(18px ,'Exo', 24px ,$white-cl, uppercase);
+                        background-color: #0072bc;
+                        letter-spacing: -1px;
+                        height: 45px;
+                        @include mid(true)
+                    }
+                    &-nav {
+                        padding: 0 20px;
+                        background-color: $white-cl;
+                        ul {
+                            padding-bottom: 45px;
+                            li {
+                                cursor: pointer;
+                                position: relative;
+                                @include text($fz-text, 'Rm',24px,$text-black-cl,uppercase);
+                                padding: 20px 0 10px 20px;
+                                &::after {
+                                    content: '';
+                                    width: 220px;
+                                    height: 1px;
+                                    background-color: #d8d8d8;
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: 0;
+                                }
+                                i {
+                                    padding-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+                &__mains {
+                    flex: 1;
+                    .product__title {
+                        @include text(27px,'Exo',24px ,$text-black-cl,uppercase);
+                        text-align: center;
+                        position: relative;
+                        padding-bottom: 60px;
+                        letter-spacing: -1px;
+                        &::after {
+                            content: '';
+                            background-color: #0072bc;
+                            width: 80px;
+                            height: 3px;
+                            top: 50%;
+                            left: 51%;
+                            @include transform(translate(-50%, -50%));
+                            position: absolute;
+                        }
+                        &::before {
+                            content: '';
+                            background-color: #0072bc;
+                            width: 80px;
+                            height: 2px;
+                            top: 45%;
+                            left: 49%;
+                            @include transform(translate(-50%, -50%));
+                            position: absolute;
+                        }
+                    }
+                    .product__main {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 28px;
+                        .product__btn {
+                            cursor: pointer;
+                        }
+                        .product__items {
+                            display: flex;
+                            // overflow: hidden;
+                            width: 755px;      
+                            .flickity-viewport {
+                                width: 100%;
+                            }   
+                            .flickity-button {
+                                display: none;
+                            }      
+                            .flickity-page-dots {
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                display: flex;
+                                flex-direction: column;
+                                @include transform(translateY(-50%));
+                                .dot  {
+                                    width: 250px;
+                                    height: 50px;
+                                    margin: 3px 7px;
+                                    background: none;
+                                    border-radius: none;
+                                }
+                            }     
+                            &.flickity-enabled {
+                                position: static;
+                            }                                                            
+                            .product__item {
+                                display: flex;
+                                // align-items: center;
+                                justify-content: space-around;
+                                width: 755px;
+                                .product__img {
+                                    margin-right: 30px;
+                                    width: 355px ;
+                                    height: 277px;
+                                }
+                                .product__text {
+                                    max-width: 370px;
+                                    &-title {
+                                        @include text(17px ,'Rb', 24px ,$text-black-cl,uppercase);
+                                        padding-bottom: 10px
+                                    }
+                                    &-des { 
+                                        @include text(15px ,'Rr', 24px ,$text-black-cl, normal);
+                                    }
+                                    &-price {
+                                        @include text(16px ,'Rb', 24px ,$text-black-cl,normal);
+                                    }
+                                    &-contact {
+                                        @include text(16px ,'Rb', 24px ,#d00000,normal);
+        
+                                    }
+                                    &-btn {
+                                        cursor: pointer;
+                                        width: 170px;
+                                        height: 37px;
+                                        margin-top: 20px;
+                                        @include text(15px ,'Rb', 24px ,$text-white-cl,uppercase);
+                                        background-color: #0072bc;
+                                        @include mid(true)
+                                    }
+                                }
+                            } 
+    
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .process {
+        height: 540px;
+        position: relative;
+        overflow: hidden;
+        &__img {
+            @include midimg()
+        }
+        .container {
+            @include mid();
+            z-index: 1;
+            height: 100%;
+            padding: 60px 15px 70px 15px;
+            .process__text{
+                text-align: center;
+                .process__title {
+                    @include text(36px,'Exo', 22px ,$text-white-cl ,uppercase);
+                    padding-bottom: 10px;
+                } 
+                .process__des {
+                    @include text(18px, 'Rr' ,22px,$text-white-cl,normal);
+                    padding-bottom: 40px;
+                }
+            }
+            .process__main {
+                position: relative;
+                .process__line-tree {
+                    width: 100%;
+                    height: 7px;
+                    background-color: #7a7b7b;
+                    z-index: -1;
+                    position: absolute;
+                    bottom: 15px;
+                    border-radius: 5px;
+                    @include transform(translateY(50%));
+                    .process__line-run {
+                        background-color: #004c92;
+                        width: 50%;
+                        height: 100%;
+                    }
+                }
+                .process__items {
+                    display: flex;
+                    justify-content: space-between;
+                    // align-items: center;
+                    // position: relative;
+                    .process__item-arow {
+                        margin-top: 71.5px;
+                    }
+                    .process__item {
+
+                        &-text {
+                            cursor: pointer;   
+                            text-align: center;
+                            @include mid(true);
+                            border-radius: 50%;
+                            width: 160px;
+                            height: 160px;
+                            background-color: #7a7b7b;
+                            @include text(18px ,'Rb' ,20px,$text-white-cl,uppercase);
+                            padding: 0 20px;
+                            &.active {
+                                background-color: #004c92
+                            }
+                        }
+                        &-number {
+                            @include text(36px,'Open Sans',30px,$text-white-cl,normal);
+                           @include mid(true);
+                            cursor: pointer;
+                           margin: 50px 0 15px 0;
+                        }
+                        &-icon {
+                            cursor: pointer;
+                            width: 30px;
+                            height: 30px;
+                            border: 5px solid $text-white-cl;
+                            border-radius: 50%;
+                            background-color: #7a7b7b;
+                            margin: auto;
+                            &.active {
+                                background-color: #004c92
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    .card {
+        position: relative;
+        height: 460px;
+        padding: 50px 0 40px 0;
+        .card__btn {
+            margin-left: 140px;
+            cursor: pointer;
+            &.next {
+                margin-right: 140px;
+            }
+        }
+        .container {
+            .card__title {
+                @include text(27px,'Exo',24px ,$text-black-cl,uppercase);
+                text-align: center;
+                position: relative;
+                padding-bottom: 60px;
+                letter-spacing: -1px;
+                &::after {
+                    content: '';
+                    background-color: #0072bc;
+                    width: 80px;
+                    height: 3px;
+                    top: 50%;
+                    left: 51%;
+                    @include transform(translate(-50%, -50%));
+                    position: absolute;
+                }
+                &::before {
+                    content: '';
+                    background-color: #0072bc;
+                    width: 80px;
+                    height: 2px;
+                    top: 45%;
+                    left: 49%;
+                    @include transform(translate(-50%, -50%));
+                    position: absolute;
+                }
+            }
+            .card__items {
+                display: flex;
+                overflow: hidden;   
+                .card__item {
+                    margin-right: 25px;
+                    .card__item-img {
+                        position: relative;
+                        overflow: hidden;
+                        width: 285px;
+                        height: 220px;
+                        img {
+                            @include midimg()
+                        }
+                    }
+
+                    &-des{
+                        padding-top: 10px;
+                        text-align: center;
+                        @include text(17px, 'Rb',24px ,$text-black-cl,uppercase);
+                    }
+                }
+            }
+        }
+        .card__btn {
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+            &.next {
+                right: 0;
+            }
+        }
+    }
+    .news {
+        position: relative;
+        height: 650px;
+        overflow: hidden;
+        &__img {
+            @include midimg()
+        }
+        .container {
+            @include mid();
+            z-index: 1;
+            background-color: $white-cl;
+            padding: 50px 30px;
+            max-height: 510px;
+            display: flex;
+            .news__main {
+                &-title {
+                    @include text(24px ,'Exo',30px ,$text-black-cl, uppercase);
+                    padding-bottom: 15px;
+                }
+                &-content {
+                    display: grid;
+                    grid-template-columns: 380px 380px;
+                    gap: 20px;
+                    .news__main-left {
+                        .news__main-box {
+                            img {
+                                width: 380px;
+                                height: 200px;
+                            }
+                            .news__main-gist {
+                                @include text(16px ,'Rb', 30px ,$text-black-cl,normal )
+                            }
+                            .news__main-des {
+                                @include text(15px ,'Rr', 25px ,$text-black-cl,normal )
+                            }
+                            .news__main-btn {
+                                @include mid(true);
+                                width: 128px;
+                                height: 38px;
+                                background-color: #004c92;
+                                position: relative;
+                                margin-top: 20px;
+                                a {
+                                    @include text(13px ,'Rm', 20px ,$text-white-cl, normal);
+                                    text-decoration: none;
+                                }
+                                img {
+                                    width: 10px ;
+                                    height: 10px;
+                                    margin-right: 10px;
+                                }
+                                &::after {
+                                    content: '';
+                                    width: 5px;
+                                    height: 100%;
+                                    position: absolute;
+                                    left: 0;
+                                    background-color: #f5821f;
+                                }
+                            }
+                        }
+                    }
+                    .news__main-right {
+                        display: grid;
+                        grid-template-rows: repeat(3, 1fr);
+                        gap :15px;
+                        .news__main-box {
+                            display: flex;
+                            img {
+                                width: 150px;
+                                height: 110px;
+                            }
+                            .news__main-text {
+                                padding-left: 10px;
+                                .news__main-gist {
+                                    @include text(16px ,'Rb', 20px ,$text-black-cl,normal )
+                                }
+                                .news__main-des {
+                                    @include text(15px ,'Rr', 18px ,$text-black-cl,normal )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .news__videos {
+                flex: 1;
+                padding-left: 30px;
+                &-title {
+                    @include text(24px ,'Exo',30px ,$text-black-cl, uppercase);
+                    padding-bottom: 15px;
+                }
+                &-content {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: 270px 90px;
+                    gap: 10px;
+                    .img1 {
+                        grid-area: 1/1/2/4; // row start / colum start / row end /colum end
+                        height: 100%;
+                        position: relative;
+                        overflow: hidden;
+                        &__icon {
+                           @include mid();
+                            z-index:1;
+                        }
+                        &__img {
+                            @include midimg()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contact {
+        min-height: 580px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        @include mid(true);
+        .container {
+            display: grid;
+            grid-template-columns: 725px 1fr;
+            gap: 35px;
+            .contact__img {
+                position: relative;
+                height: 450px;
+                overflow: hidden;
+                img {
+                    @include midimg()
+                }
+            }
+            .contact__form {
+                &-title {
+                    @include text(25px ,'Exo',35px ,$text-black-cl,uppercase)
+                }
+                &-des {
+                    @include text(14px , 'Rr' ,22px ,$text-black-cl , normal)
+                }
+                .form {
+                    .input {
+                        width: 100%;
+                        position: relative;
+                        &__field {
+                            width: 100%;
+                            height: 40px;
+                            padding: 15px 40px ;
+                            margin-top: 12px;
+                            border: none;
+                            outline: none;
+                            box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.19);
+                            -webkit-box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.19);
+                            -moz-box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.19);
+                            @include text(14px , 'Rr' ,22px ,$text-black-cl , normal);
+                        }
+
+                        &.invalid {
+                            .input__field {
+                                border: #d00000 2px solid;
+                            }
+                        }
+                        &.content {
+                            .input__field {
+                                height: 96px;
+                                resize: none;
+                            }
+                            .input__label {
+                                top : 48px;
+                                @include transform(translateY(-50%))
+                            }
+                        }
+                        &__label {
+                            position: absolute;
+                            width: 18px;
+                            height: 18px;
+                            left: 0;
+                            top: 38px; 
+                            left: 15px;
+                            @include transform(translateY(-50%))
+                        }
+                        .error-message {
+                            @include text(14px , 'Rr' ,25px ,#d00000 , normal)
+
+                        }
+                    }
+                    .form-button{
+                        @include text(17px , "Rd",17px,$text-white-cl,uppercase);
+                        background-color:#d80000;
+                        border: none;
+                        padding: 10px 20px;
+                        margin-top: 10px;
+                        &.send {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .involve {
+        background-color: #ebebeb;
+        .container {
+            display: flex;
+            align-items: center;
+            padding: 26px 0;
+            .involve__btn {
+                cursor: pointer;
+            }
+            .involve__items {
+                flex: 1;
+                display: flex;
+                overflow: hidden;
+                .flickity-viewport {
+                    width: 100%;
+                }
+                .flickity-button  {
+                    display: none;
+                }
+                .involve__item {
+                    margin: 0 6px;
+                    min-width: 150px;
+                    min-height: 90px;
+                    position: relative;
+                    img {
+                        @include midimg()
+                    }
+                }
+            }
+        }
+    }
+}
+.backtotop {
+    width: 50px;
+    height: 50px;
+    background-color:#cd000e;
+    position: fixed;
+    right:  40px;
+    bottom: 40px;
+    cursor: pointer;
+    @include text(12px,'Rr',12,$text-white-cl,uppercase);
+    @include mid(true);
+    display: none;
+    &.active {
+        display: block;
+    }
+}

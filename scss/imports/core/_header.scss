@@ -1,0 +1,99 @@
+// css header
+header {
+    position: relative;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    .logo {
+        margin-top: 45px;
+        background-color: $white-cl;
+        width: 194px;
+        height: 164px;
+        @include mid(true);
+       
+        .hidden {
+            display: none;
+        }
+        -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, -50px -50px 0px -30px rgba(0,0,0,0); 
+        box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, -50px -50px 0px -30px rgba(0,0,0,0);
+    }
+    .header__top {
+        background-color: $primary;
+        height: 148px;
+        .title {
+            text-align: center;
+            h2 {
+            letter-spacing: -3px;
+            @include text(45px,'Exo',40px,#ffdd15,uppercase);
+            text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+           }
+           p {
+            @include text(24px,'Exo',40px,#ffdd15,normal);
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.4);
+
+           }
+        }
+        .header__right {
+            display: flex;
+            .right__icon {
+                width: 68px;
+                height: 68px;
+            }
+            .right__text {
+                &-title {
+                    @include text($fz-text,'Rd',30px,$white-cl, uppercase)
+                }
+                &-number {
+                    @include text(31.52px,'Scb',24px,#ffdd15,normal)
+                }
+            }   
+        }
+    }
+    .header__bottom {
+        background-image: linear-gradient(to top, #bdcde2 40%, #f5fafd 50%);
+        height: 46px;
+        .logo1 {
+            width: 194px;
+        }
+        .menu {
+            ul {
+                display: flex;
+                li {
+                    a {
+                        @include text($fz-text, 'Rd',20px ,$black-cl, uppercase);
+                        text-decoration: none;
+                        padding: 0 15px;
+                        letter-spacing: -1px;
+                    }
+                }
+            }
+        }
+        .header__right {
+            position: relative;
+            input {
+                width: 220px;
+                height: 30px;
+                padding-left: 14px;
+                padding-right: 34px;
+                border: none;
+                outline: none;
+                border-radius: 3px;
+                -webkit-box-shadow: 10px 13px 10px -9px #000000; 
+                box-shadow: 10px 13px 10px -9px #000000; 
+            }
+            .menu__search-icon {
+                position: absolute;
+                cursor: pointer;
+                right: 14px;
+                top: 50%;      
+                @include transform(translateY(-50%));  
+                width: 16px;
+                height: 16px;    
+            }
+        }
+    }
+}
